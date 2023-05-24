@@ -7,9 +7,13 @@ interface Props {
 const { title, body } = Astro.props;
 ---
 
-<div class="card bg-base-300 text-neutral-content basis-full">
-    <div class="card-body items-center text-center">
-        <h2 class="card-title text-black">{title}</h2>
-        <p class="text-black">{body}</p>
+<div
+    class="card flex p-2 hover:bg-primary transition-all duration-150 hover:scale-110"
+>
+    <div class="card bg-base-300 basis-full">
+        <div class="card-body items-center text-center">
+            <h2 class="card-title text-black">{title}</h2>
+            <p class="text-black">{body}</p>
+        </div>
     </div>
 </div>
