@@ -1,5 +1,93 @@
 ---
 import Layout from "../layouts/Layout.astro";
+import Card from "../components/Card.astro";
 ---
 
-<Layout title="International Leather Clothiers">span</Layout>
+<Layout title="International Leather Clothiers">
+    <div
+        class="hero min-h-screen"
+        style="background-image: url(../src/assets/shirts.jpg);"
+    >
+        <div class="hero-overlay bg-opacity-40"></div>
+        <div class="hero-content text-center">
+            <div class="max-w-md">
+                <h1 class="text-5xl font-bold text-orange-400">Hello there.</h1>
+                <p class="py-6 font-semibold text-orange-400">
+                    We are International Leather Clothiers. Kolkata's number one
+                    leather and fabric goods maker and supplier.
+                </p>
+                <button class="btn btn-primary">Contact Us</button>
+            </div>
+        </div>
+    </div>
+    <section class="min-h-fit max-w-screen-lg m-auto">
+        <h2 class="text-center text-5xl font-bold p-4 my-4">Our Services</h2>
+        <div class="flex flex-col lg:flex-row gap-4 mb-10">
+            <Card
+                title="Cookies!"
+                body="Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit fuga impedit facere deserunt, rerum qui sit atque laudantium. Id officia laborum voluptate voluptatum libero, dolore quam inventore odio suscipit provident."
+            />
+            <Card
+                title="Cookies!"
+                body="Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit fuga impedit facere deserunt, rerum qui sit atque laudantium. Id officia laborum voluptate voluptatum libero, dolore quam inventore odio suscipit provident."
+            />
+            <Card
+                title="Cookies!"
+                body="Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit fuga impedit facere deserunt, rerum qui sit atque laudantium. Id officia laborum voluptate voluptatum libero, dolore quam inventore odio suscipit provident."
+            />
+        </div>
+    </section>
+    <section class="min-h-fit max-w-screen-lg m-auto">
+        <h2 class="text-center text-5xl font-bold p-4 my-4">Our Story</h2>
+        <div class="flex flex-col lg:flex-row gap-4 mb-10">
+            <div class="basis-full">
+                <img src="../src/assets/shirt-shoes.jpg" />
+            </div>
+            <div class="flex flex-col basis-full justify-center">
+                <p class="py-4">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    Officiis sint omnis error qui ullam ex, voluptates, atque
+                    suscipit exercitationem dolorum ipsa in voluptatibus nemo,
+                    quisquam voluptatem! Doloremque ipsa quo laborum quam dicta
+                    tempore vitae quod quae itaque quia labore obcaecati
+                    deleniti praesentium sapiente, laudantium dolor! Quaerat
+                    voluptatem sint esse quo sequi eum harum architecto, hic
+                    dolores ducimus incidunt iure, a voluptatum tenetur? Eveniet
+                    iure exercitationem in ratione ex voluptas. A vitae facere
+                    corporis voluptatibus esse mollitia, voluptates asperiores
+                    dolorum, magni quas suscipit similique. Aliquid rem cum
+                    autem harum repudiandae ducimus blanditiis consequatur nobis
+                    eius adipisci neque assumenda, tenetur in culpa!
+                </p>
+                <button class="btn btn-primary">Read More!</button>
+            </div>
+        </div>
+    </section>
+    <section class="min-h-fit max-w-screen-lg m-auto">
+        <h2 class="text-center text-5xl font-bold p-4 my-4">Contact Us</h2>
+        <div class="flex flex-col justify-center p-4 gap-4">
+            <p>
+                What are you waiting for? If you have a design you would like to
+                see be made in reality don't wait to contact us!
+            </p>
+            <div class="form-control gap-2">
+                <label class="input-group">
+                    <span>Name</span>
+                    <input type="text" class="input input-bordered flex-grow" />
+                </label>
+                <label class="input-group">
+                    <span>Email</span>
+                    <input type="text" class="input input-bordered flex-grow" />
+                </label>
+                <label class="input-group">
+                    <span>Subject</span>
+                    <input type="text" class="input input-bordered flex-grow" />
+                </label>
+                <textarea
+                    class="textarea textarea-bordered h-48 resize-none"
+                    placeholder="Your Email Here!"></textarea>
+                <button class="btn btn-primary">Submit!</button>
+            </div>
+        </div>
+    </section>
+</Layout>
