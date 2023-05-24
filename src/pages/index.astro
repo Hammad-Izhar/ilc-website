@@ -1,13 +1,13 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import Card from "../components/Card.astro";
+
+import hero from "../assets/shirts.jpg";
+import shirt_shoes from "../assets/shirt-shoes.jpg";
 ---
 
 <Layout title="International Leather Clothiers">
-    <div
-        class="hero min-h-screen"
-        style="background-image: url(../src/assets/shirts.jpg);"
-    >
+    <div class="hero min-h-screen" style={`background-image: url(${hero});`}>
         <div class="hero-overlay bg-opacity-40"></div>
         <div class="hero-content text-center">
             <div class="max-w-md">
@@ -43,7 +43,7 @@ import Card from "../components/Card.astro";
         <h2 class="text-center text-5xl font-bold p-4 my-4">Our Story</h2>
         <div class="flex flex-col lg:flex-row gap-4 mb-10">
             <div class="basis-full">
-                <img src="../src/assets/shirt-shoes.jpg" />
+                <img src={shirt_shoes} />
             </div>
             <div class="flex flex-col basis-full justify-center">
                 <p class="py-4">
