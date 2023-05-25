@@ -1,0 +1,37 @@
+---
+export function getStaticPaths() {
+    const fabrics = [
+        { idx: "1", item: "warson-red", itemName: "Warson Red" },
+        { idx: "2", item: "sunshine-orange", itemName: "Sunshine Orange" },
+        { idx: "3", item: "airforce-blue", itemName: "Airforce Blue" },
+        { idx: "4", item: "gulf-blue", itemName: "Gulf Blue" },
+        { idx: "5", item: "cobalt-blue", itemName: "Cobalt Blue" },
+        { idx: "6", item: "royal-blue", itemName: "Royal Blue" },
+        { idx: "7", item: "petrol-blue", itemName: "Petrol Blue" },
+        { idx: "8", item: "british-green", itemName: "British Green" },
+        { idx: "9", item: "navy-blue", itemName: "Navy Blue" },
+        { idx: "10", item: "anthrazit", itemName: "Anthrazit" },
+        { idx: "11", item: "midnight-black", itemName: "Midnight Black" },
+        { idx: "12", item: "beige", itemName: "Beige" },
+        { idx: "13", item: "charcoal-grey", itemName: "Charcoal Grey" },
+        { idx: "14", item: "grey-milange", itemName: "Grey Milange" },
+        { idx: "15", item: "gulf-sports-grey", itemName: "Gulf Sports Grey" },
+        { idx: "16", item: "pearl-white", itemName: "Pearl White" },
+    ];
+
+    return fabrics.map(({ idx, item, itemName }) => {
+        return {
+            params: { item },
+            props: { idx, itemName },
+        };
+    });
+}
+
+import ItemLayout from "@layouts/ItemLayout.astro";
+
+const { idx, itemName } = Astro.props;
+const imgSrc = (await import(`../../assets/fabric/${idx}_${itemName}.jpg`))
+    .default;
+---
+
+<ItemLayout itemName={itemName} imgSrc={imgSrc} itemPage="fabric" />

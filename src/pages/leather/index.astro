@@ -14,7 +14,7 @@ const leathers = await Astro.glob("../../assets/leather/*.jpg").then((files) =>
 );
 ---
 
-<Layout title="ILC | Fabric">
+<Layout title="ME | Leather">
     <div class="flex flex-col justify-center items-center gap-2 p-10">
         <h2 class="text-4xl uppercase font-bold">Leather</h2>
         <span class="text-lg">
@@ -27,7 +27,7 @@ const leathers = await Astro.glob("../../assets/leather/*.jpg").then((files) =>
                 .sort((a, b) => a.order - b.order)
                 .map((leather) => (
                     <ItemCard
-                        href=""
+                        page="leather"
                         imgURL={leather.path}
                         name={leather.name}
                     />

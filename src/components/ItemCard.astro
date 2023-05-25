@@ -1,16 +1,16 @@
 ---
 interface Props {
-    href: string;
     imgURL: string;
     name: string;
+    page: string;
 }
 
-const { href, imgURL, name } = Astro.props;
+const { page, imgURL, name } = Astro.props;
 ---
 
 <a
     class="card card-compact w-48 h-48 shadow-xl relative overflow-hidden group"
-    href={href}
+    href={`/${page}/${name.replaceAll(" ", "-").toLowerCase()}`}
 >
     <img class="object-fill" src={imgURL} alt={name} />
     <div
