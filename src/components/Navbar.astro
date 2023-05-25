@@ -2,9 +2,10 @@
 import HamburgerMenu from "./HamburgerMenu.astro";
 ---
 
-<nav class="navbar bg-base-300 sticky top-0 z-10">
+<nav class="navbar bg-base-300 sticky top-0 z-50">
     <div class="flex-1 px-2 lg:flex-none">
-        <a class="text-lg font-bold">International Leather Clothiers</a>
+        <a class="text-lg font-bold" href="/">International Leather Clothiers</a
+        >
     </div>
     <HamburgerMenu navLabel="nav-drawer" />
     <div class="hidden lg:flex justify-end flex-1 px-2">
@@ -44,12 +45,12 @@ import HamburgerMenu from "./HamburgerMenu.astro";
                     >
                 </label>
                 <ul class="dropdown-content menu p-2 bg-base-300">
-                    <li><a>Leather</a></li>
-                    <li><a>Fabric</a></li>
-                    <li><a>T-Shirts</a></li>
-                    <li><a>Polos</a></li>
-                    <li><a>Bags</a></li>
-                    <li><a>Wool</a></li>
+                    <li><a href="/leather">Leather</a></li>
+                    <li><a href="/fabric">Fabric</a></li>
+                    <li><a href="/wool">Wool</a></li>
+                    <li><a href="/shirts">T-Shirts</a></li>
+                    <li><a href="/polos">Polos</a></li>
+                    <li><a href="/bags">Bags</a></li>
                 </ul>
             </div>
             <div class="btn btn-ghost">Manufacturing</div>

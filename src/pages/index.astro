@@ -1,27 +1,33 @@
 ---
-import Layout from "../layouts/Layout.astro";
-import Card from "../components/Card.astro";
+import Layout from "@layouts/Layout.astro";
+import Card from "@components/Card.astro";
+import ContactForm from "@components/ContactForm.astro";
 
-import hero from "../assets/shirts.jpg";
-import shirt_shoes from "../assets/shirt-shoes.jpg";
+import hero from "@assets/shirts.jpg";
+import shirt_shoes from "@assets/shirt-shoes.jpg";
+import grandPrixOriginals from "@assets/suppliers/grandprixoriginals.webp";
+import gamesSportsWear from "@assets/suppliers/games.jpeg";
+import tagHeuer from "@assets/suppliers/tag_heur.png";
 ---
 
 <Layout title="International Leather Clothiers">
-    <div class="hero min-h-screen" style={`background-image: url(${hero});`}>
-        <div class="hero-overlay bg-opacity-40"></div>
+    <div
+        slot="hero"
+        class="hero min-h-screen"
+        style={`background-image: url(${hero});`}
+    >
+        <div class="hero-overlay bg-opacity-10"></div>
         <div class="hero-content text-center">
-            <div class="max-w-md">
-                <h1 class="text-5xl font-bold text-lime-200">Hello there.</h1>
-                <p class="py-6 font-semibold text-lime-200">
-                    We are International Leather Clothiers. Kolkata's number one
-                    leather and fabric goods maker and supplier.
+            <div class="max-w-md -translate-y-1/2">
+                <h1 class="text-5xl font-bold text-zinc-900">Hello there.</h1>
+                <p class="py-6 font-semibold text-zinc-900">
+                    We are International Leather Clothiers.
                 </p>
                 <button class="btn btn-primary">Contact Us</button>
             </div>
         </div>
     </div>
-
-    <section class="min-h-fit max-w-screen-lg m-auto">
+    <section class="min-h-fit">
         <h2 class="text-center text-5xl font-bold p-4 my-4">Our Services</h2>
         <div class="flex flex-col lg:flex-row gap-4 mb-10">
             <Card
@@ -39,7 +45,7 @@ import shirt_shoes from "../assets/shirt-shoes.jpg";
         </div>
     </section>
 
-    <section class="min-h-fit max-w-screen-lg m-auto">
+    <section class="min-h-fit">
         <h2 class="text-center text-5xl font-bold p-4 my-4">Our Story</h2>
         <div class="flex flex-col lg:flex-row gap-4 mb-10">
             <div class="basis-full">
@@ -66,36 +72,31 @@ import shirt_shoes from "../assets/shirt-shoes.jpg";
         </div>
     </section>
 
-    <section class="min-h-fit max-w-screen-lg m-auto">
-        <h2 class="text-center text-5xl font-bold p-4 my-4">Testimonials</h2>
-        Add them here!
+    <section class="min-h-fit">
+        <h2 class="text-center text-5xl font-bold p-4 my-4">
+            Trusted Supplier & Manufacturer
+        </h2>
+        <div class="flex gap-10 justify-center items-center">
+            <figure class="basis-full">
+                <img src={grandPrixOriginals} />
+            </figure>
+            <figure class="basis-full">
+                <img src={gamesSportsWear} />
+            </figure>
+            <figure class="basis-full">
+                <img src={tagHeuer} />
+            </figure>
+        </div>
     </section>
 
-    <section class="min-h-fit max-w-screen-lg m-auto">
+    <section class="min-h-fit">
         <h2 class="text-center text-5xl font-bold p-4 my-4">Contact Us</h2>
         <div class="flex flex-col justify-center p-4 gap-4">
             <p>
                 What are you waiting for? If you have a design you would like to
                 see be made in reality don't wait to contact us!
             </p>
-            <div class="form-control gap-2">
-                <label class="input-group">
-                    <span>Name</span>
-                    <input type="text" class="input input-bordered flex-grow" />
-                </label>
-                <label class="input-group">
-                    <span>Email</span>
-                    <input type="text" class="input input-bordered flex-grow" />
-                </label>
-                <label class="input-group">
-                    <span>Subject</span>
-                    <input type="text" class="input input-bordered flex-grow" />
-                </label>
-                <textarea
-                    class="textarea textarea-bordered h-48 resize-none"
-                    placeholder="Your Email Here!"></textarea>
-                <button class="btn btn-primary">Submit!</button>
-            </div>
+            <ContactForm />
         </div>
     </section>
 </Layout>

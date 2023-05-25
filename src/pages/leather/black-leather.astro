@@ -1,0 +1,41 @@
+---
+import ItemLayout from "@layouts/ItemLayout.astro";
+import black_leather from "@assets/leather/black_leather.jpg";
+import red_leather from "@assets/leather/red_leather.jpg";
+import orange_leather from "@assets/leather/orange_leather.jpg";
+import blue_leather from "@assets/leather/blue_leather.jpg";
+import ContactForm from "@components/ContactForm.astro";
+---
+
+<ItemLayout title="ILC | Black Leather">
+    <div class="flex py-8 justify-center items-center flex-col md:flex-row">
+        <div class="basis-1/2">
+            <a href="/leather" class="text-lg">❮ Back to Browse</a>
+            <div class="carousel">
+                <div id="item1" class="carousel-item w-full">
+                    <img src={black_leather} class="w-full" />
+                </div>
+                <div id="item2" class="carousel-item w-full">
+                    <img src={red_leather} class="w-full" />
+                </div>
+                <div id="item3" class="carousel-item w-full">
+                    <img src={orange_leather} class="w-full" />
+                </div>
+                <div id="item4" class="carousel-item w-full">
+                    <img src={blue_leather} class="w-full" />
+                </div>
+            </div>
+            <div class="flex justify-center w-full py-2 gap-2">
+                <a href="#item1" class="btn btn-xs">1</a>
+                <a href="#item2" class="btn btn-xs">2</a>
+                <a href="#item3" class="btn btn-xs">3</a>
+                <a href="#item4" class="btn btn-xs">4</a>
+            </div>
+        </div>
+        <div class="flex flex-col gap-4 basis-1/2 items-center">
+            <h2 class="text-5xl font-bold">Black Leather</h2>
+            <p>Want to see more of this? Feel free to contact us!</p>
+            <ContactForm />
+        </div>
+    </div>
+</ItemLayout>
