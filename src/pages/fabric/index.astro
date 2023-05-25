@@ -1,0 +1,25 @@
+---
+import Layout from "@layouts/Layout.astro";
+import ItemCard from "@components/ItemCard.astro";
+const fabrics = await Astro.glob("../../assets/fabric/*.jpg");
+
+const filename_regex = /.*\/(\w+[\s?\w*]*).\w{3,4}/;
+---
+
+<Layout title="ILC | Fabric">
+    <div class="flex flex-col justify-center items-center gap-2 p-10">
+        <h2 class="text-4xl uppercase font-bold">Fabric</h2>
+        <span class="text-lg"> Smooth, silky, fabric.</span>
+    </div>
+    <div class="flex gap-4 flex-wrap justify-center items-center mb-10">
+        {
+            fabrics.map((fabric) => (
+                <ItemCard
+                    href=""
+                    imgURL={fabric.default}
+                    name={fabric.default.match(filename_regex)[1]}
+                />
+            ))
+        }
+    </div>
+</Layout>

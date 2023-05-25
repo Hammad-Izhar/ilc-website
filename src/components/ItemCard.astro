@@ -9,15 +9,12 @@ const { href, imgURL, name } = Astro.props;
 ---
 
 <a
-    class="card card-compact w-48 image-full shadow-xl relative overflow-hidden group"
+    class="card card-compact w-48 shadow-xl relative overflow-hidden group"
     href={href}
 >
     <figure>
         <img src={imgURL} alt={name} />
     </figure>
-    <div class="card-body relative">
-        <div class="absolute bottom-0 mb-4"></div>
-    </div>
     <div
         class="translate-y-full absolute bottom-0 w-full h-1/3 bg-white z-10 flex p-4 transition-all group-hover:translate-y-0 group-focus:translate-y-0 justify-center items-center text-center"
     >
