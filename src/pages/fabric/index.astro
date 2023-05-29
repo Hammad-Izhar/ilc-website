@@ -1,6 +1,6 @@
 ---
 import Layout from "@layouts/Layout.astro";
-import ItemCard from "@components/ItemCard.astro";
+import ItemCard from "@components/UI/ItemCard.astro";
 
 const filename_regex = /.*\/(\d+)_(\w+[\s?\w*]*).\w{3,4}/;
 const fabrics = await Astro.glob("../../assets/fabric/*.jpg").then((files) =>

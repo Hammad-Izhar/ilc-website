@@ -1,0 +1,59 @@
+---
+import HamburgerMenu from "./HamburgerMenu.astro";
+---
+
+<nav class="navbar sticky top-0 z-50 bg-black">
+    <div class="flex-1 px-2 lg:flex-none">
+        <a class="text-lg font-bold text-white" href="/">Mercury Exports</a>
+    </div>
+    <HamburgerMenu navLabel="nav-drawer" />
+    <div class="hidden lg:flex justify-end flex-1 px-2">
+        <div class="flex items-stretch gap-2">
+            <div class="dropdown dropdown-hover">
+                <label class="btn btn-ghost text-white"
+                    >About Us
+                    <svg
+                        class="fill-current"
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="20"
+                        height="20"
+                        viewBox="0 0 24 24"
+                        ><path
+                            d="M7.41,8.58L12,13.17L16.59,8.58L18,10L12,16L6,10L7.41,8.58Z"
+                        ></path></svg
+                    >
+                </label>
+                <ul class="dropdown-content menu p-2 bg-black">
+                    <li><a class="text-white">Management</a></li>
+                    <li><a class="text-white">Infrastructure</a></li>
+                    <li><a class="text-white">FAQ</a></li>
+                </ul>
+            </div>
+            <div class="dropdown dropdown-hover">
+                <label class="btn btn-ghost text-white"
+                    >Products
+                    <svg
+                        class="fill-current"
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="20"
+                        height="20"
+                        viewBox="0 0 24 24"
+                        ><path
+                            d="M7.41,8.58L12,13.17L16.59,8.58L18,10L12,16L6,10L7.41,8.58Z"
+                        ></path></svg
+                    >
+                </label>
+                <ul class="dropdown-content menu p-2 bg-black">
+                    <li><a class="text-white" href="/leather">Leather</a></li>
+                    <li><a class="text-white" href="/fabric">Fabric</a></li>
+                    <li><a class="text-white" href="/wool">Wool</a></li>
+                    <li><a class="text-white" href="/shirts">T-Shirts</a></li>
+                    <li><a class="text-white" href="/polos">Polos</a></li>
+                    <li><a class="text-white" href="/bags">Bags</a></li>
+                </ul>
+            </div>
+            <div class="btn btn-ghost text-white">Manufacturing</div>
+            <div class="btn btn-ghost text-white">Contact Us</div>
+        </div>
+    </div>
+</nav>

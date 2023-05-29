@@ -1,9 +1,10 @@
 ---
 import Layout from "@layouts/Layout.astro";
-import Card from "@components/Card.astro";
-import ContactForm from "@components/ContactForm.astro";
+import Card from "@components/UI/Card.astro";
+import ContactForm from "@components/UI/ContactForm.astro";
 
-import hero from "@assets/shirts.jpg";
+import heroPicture from "@assets/shirts.jpg";
+import hero from "@assets/hero.mp4";
 import shirt_shoes from "@assets/shirt-shoes.jpg";
 import grandPrixOriginals from "@assets/suppliers/grandprixoriginals.webp";
 import gamesSportsWear from "@assets/suppliers/games.jpeg";
@@ -11,24 +12,36 @@ import tagHeuer from "@assets/suppliers/tag_heur.png";
 ---
 
 <Layout title="Mercury Exports">
-    <div
-        slot="hero"
-        class="hero min-h-screen"
-        style={`background-image: url(${hero});`}
-    >
-        <div class="hero-overlay bg-opacity-10"></div>
-        <div class="hero-content text-center">
-            <div class="max-w-md -translate-y-1/2">
-                <h1 class="text-5xl font-bold text-zinc-900">Hello there.</h1>
-                <p class="py-6 font-semibold text-zinc-900">
-                    We are Mercury Exports.
-                </p>
-                <button class="btn btn-primary">Contact Us</button>
+    <div slot="hero" class="min-h-screen bg-black">
+        <div slot="hero" class="hero max-h-[80vh] overflow-hidden">
+            <div class="bg-black/25 w-full h-full z-10"></div>
+            <div
+                class="hero-overlay bg-opacity-10"
+                style={`background-image: url(${hero});`}
+            >
+                <video
+                    class="hidden lg:block object-cover w-full h-full"
+                    autoplay
+                    loop
+                    muted
+                    poster={heroPicture}
+                >
+                    <source src={hero} type="video/mp4" />
+                </video>
+            </div>
+            <div class="hero-content text-center z-20">
+                <div class="-translate-y-1/2">
+                    <h1 class="text-6xl font-bold text-white">Hello there.</h1>
+                    <p class="text-2xl py-6 font-semibold text-white">
+                        We are Mercury Exports.
+                    </p>
+                    <button class="btn btn-primary">Contact Us</button>
+                </div>
             </div>
         </div>
     </div>
-    <section class="min-h-fit">
-        <h2 class="text-center text-5xl font-bold p-4 my-4">Our Services</h2>
+    <section class="min-h-fit snap-start">
+        <h2 class="text-center text-5xl font-bold p-4 my-4">Our Facilities</h2>
         <div class="flex flex-col lg:flex-row gap-4 mb-10">
             <Card
                 title="Technical Service"
