@@ -18,7 +18,7 @@ const MaterialPage = () => {
     const [selectedMaterial, setSelectedMaterial] = useState<Material>("All");
 
     return (
-        <div className="flex">
+        <div className="flex flex-wrap">
             <MaterialSidebar
                 selectedMaterial={selectedMaterial}
                 selectedMaterialType={selectedMaterialType}

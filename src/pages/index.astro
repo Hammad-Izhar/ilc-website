@@ -13,11 +13,14 @@ import tagHeuer from "@assets/suppliers/tag_heur.png";
 
 <Layout title="Mercury Exports">
     <div slot="hero" class="min-h-screen bg-black">
-        <div slot="hero" class="hero max-h-[80vh] overflow-hidden">
+        <div
+            slot="hero"
+            class="hero min-h-screen lg:max-h-[80vh] overflow-hidden"
+        >
             <div class="bg-black/25 w-full h-full z-10"></div>
             <div
-                class="hero-overlay bg-opacity-10"
-                style={`background-image: url(${hero});`}
+                class="hero-overlay bg-opacity-10 h-full bg-cover"
+                style={`background-image: url(${heroPicture});`}
             >
                 <video
                     class="hidden lg:block object-cover w-full h-full"
@@ -41,7 +44,7 @@ import tagHeuer from "@assets/suppliers/tag_heur.png";
         </div>
     </div>
     <section class="min-h-fit snap-start">
-        <h2 class="text-center text-5xl font-bold p-4 my-4">Our Facilities</h2>
+        <h2 class="text-center text-5xl font-bold p-4 my-4">Our Services</h2>
         <div class="flex flex-col lg:flex-row gap-4 mb-10">
             <Card
                 title="Technical Service"
@@ -87,7 +90,7 @@ import tagHeuer from "@assets/suppliers/tag_heur.png";
 
     <section class="min-h-fit">
         <h2 class="text-center text-5xl font-bold p-4 my-4">
-            Trusted Supplier & Manufacturer
+            Trusted Supplier
         </h2>
         <div class="flex gap-10 justify-center items-center">
             <figure class="basis-full">
