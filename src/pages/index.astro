@@ -9,6 +9,7 @@ import shirt_shoes from "@assets/shirt-shoes.jpg";
 import grandPrixOriginals from "@assets/suppliers/grandprixoriginals.webp";
 import gamesSportsWear from "@assets/suppliers/games.jpeg";
 import tagHeuer from "@assets/suppliers/tag_heur.png";
+import InfoCards from "@components/InfoCards";
 ---
 
 <Layout title="Mercury Exports">
@@ -45,7 +46,8 @@ import tagHeuer from "@assets/suppliers/tag_heur.png";
     </div>
     <section class="min-h-fit snap-start">
         <h2 class="text-center text-5xl font-bold p-4 my-4">Our Services</h2>
-        <div class="flex flex-col lg:flex-row gap-4 mb-10">
+        <InfoCards client:load />
+        <!-- <div class="flex flex-col lg:flex-row gap-4 mb-10">
             <Card
                 title="Technical Service"
                 body="Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit fuga impedit facere deserunt, rerum qui sit atque laudantium. Id officia laborum voluptate voluptatum libero, dolore quam inventore odio suscipit provident."
@@ -58,7 +60,7 @@ import tagHeuer from "@assets/suppliers/tag_heur.png";
                 title="Manufacturing"
                 body="Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit fuga impedit facere deserunt, rerum qui sit atque laudantium. Id officia laborum voluptate voluptatum libero, dolore quam inventore odio suscipit provident."
             />
-        </div>
+        </div> -->
     </section>
 
     <section class="min-h-fit">
@@ -98,9 +100,6 @@ import tagHeuer from "@assets/suppliers/tag_heur.png";
             </figure>
             <figure class="basis-full">
                 <img src={gamesSportsWear} />
-            </figure>
-            <figure class="basis-full">
-                <img src={tagHeuer} />
             </figure>
         </div>
     </section>
