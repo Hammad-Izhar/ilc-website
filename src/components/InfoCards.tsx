@@ -28,7 +28,7 @@ const InfoCards = () => {
                     <div
                         key={idx}
                         className={clsx(
-                            "btn text-black",
+                            "btn text-black hover:bg-black hover:text-white",
                             activeTab === heading
                                 ? "bg-black text-white"
                                 : "bg-white"
