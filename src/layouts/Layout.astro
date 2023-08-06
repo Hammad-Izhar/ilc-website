@@ -22,7 +22,9 @@ const { title } = Astro.props;
     <body>
         <div class="drawer drawer-end">
             <input id="nav-drawer" type="checkbox" class="drawer-toggle" />
-            <div class="drawer-content flex flex-col">
+            <div
+                class="drawer-content flex flex-col snap-y snap-proximity scroll-pt-16"
+            >
                 <Navbar />
                 <slot name="hero" />
                 <div class="flex-1">
