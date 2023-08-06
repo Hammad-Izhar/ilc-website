@@ -67,7 +67,7 @@ const DesktopSidebar = ({
     setSelectedMaterialType,
 }: MaterialSidebarProps) => {
     return (
-        <div className="basis-1/5 h-screen overflow-auto hidden lg:block p-4">
+        <div className="basis-1/5 h-screen overflow-auto hidden xl:block p-4">
             <div className="tabs">
                 <SidebarTab
                     type="leather"

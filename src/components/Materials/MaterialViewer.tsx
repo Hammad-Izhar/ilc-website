@@ -58,7 +58,7 @@ const MaterialViewer = ({
     const leatherSubtypes = ["aniline", "nappa", "printed", "sheep", "vegtan"];
 
     return (
-        <div className="flex flex-wrap gap-10 flex-grow basis-4/5 p-10 justify-center">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-10 basis-full xl:basis-4/5 p-10 justify-items-center w-full">
             {selectedMaterial == "All"
                 ? leatherSubtypes.map((subtype) =>
                       Object.entries(materialList).map(([color, images]) =>

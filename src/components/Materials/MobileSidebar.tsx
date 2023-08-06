@@ -39,7 +39,7 @@ const MobileSidebar = ({
     setSelectedMaterialType,
 }: MaterialSidebarProps) => {
     return (
-        <div className="flex p-4 w-full gap-4 lg:hidden items-center">
+        <div className="flex p-4 w-full gap-4 xl:hidden items-center">
             <div className="flex gap-4 flex-grow">
                 <SidebarBadge
                     type="leather"
