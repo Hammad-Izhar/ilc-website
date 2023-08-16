@@ -1,6 +1,7 @@
 import type { Material, MaterialType } from "./MaterialPage";
 import { LeatherMaterials } from "./leather";
 import { FabricMaterials } from "./fabric";
+import type { ImageMetadata } from "astro";
 
 interface MaterialViewerProps {
     selectedMaterial: Material;
@@ -10,14 +11,19 @@ interface MaterialViewerProps {
 interface ItemCardProps {
     itemName: string;
     subtype: string;
-    imgURL: string;
+    imgURL: ImageMetadata;
 }
 
 const ItemCard = ({ itemName, subtype, imgURL }: ItemCardProps) => {
     return (
         <div>
             <a className="card card-compact w-48 h-48 shadow-xl relative overflow-hidden group">
-                <img className="h-full w-full" src={imgURL} />
+                <img
+                    className="h-full w-full"
+                    src={imgURL.src}
+                    width={imgURL.width}
+                    height={imgURL.height}
+                />
             </a>
             <p className="text-md capitalize">{subtype}</p>
             <p className="text-sm uppercase text-gray-400">{itemName}</p>
@@ -25,20 +31,23 @@ const ItemCard = ({ itemName, subtype, imgURL }: ItemCardProps) => {
     );
 };
 
-const mapImagesToCards = (color: string, images: Record<string, string>) =>
+const mapImagesToCards = (
+    color: string,
+    images: Record<string, ImageMetadata>
+) =>
     Object.entries(images).map(([materialSubtype, imgURL]) => (
         <ItemCard
             key={color + materialSubtype}
             itemName={color.replaceAll("_", " ")}
             subtype={materialSubtype}
-            imgURL={imgURL as string}
+            imgURL={imgURL as ImageMetadata}
         />
     ));
 
 const mapSubtypeToCards = (
     color: string,
     subtype: string,
-    images: Record<string, string>
+    images: Record<string, ImageMetadata>
 ) => {
     const filteredImages = Object.fromEntries(
         Object.entries(images).filter(
@@ -65,7 +74,7 @@ const MaterialViewer = ({
                           mapSubtypeToCards(
                               color,
                               subtype,
-                              images as Record<string, string>
+                              images as Record<string, ImageMetadata>
                           )
                       )
                   )

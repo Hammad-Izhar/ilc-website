@@ -14,13 +14,14 @@ import indigoLeather from "@assets/leather/Indigo.jpg";
 import navyLeather from "@assets/leather/Navy.jpg";
 import royalBlueLeather from "@assets/leather/Royal Blue.jpg";
 import gulfBlueLeather from "@assets/leather/Gulf Blue.jpg";
+import type { ImageMetadata } from "astro";
 
 export interface Leather {
-    nappa?: string;
-    vegtan?: string;
-    sheep?: string;
-    printed?: string;
-    aniline?: string;
+    nappa?: ImageMetadata;
+    vegtan?: ImageMetadata;
+    sheep?: ImageMetadata;
+    printed?: ImageMetadata;
+    aniline?: ImageMetadata;
 }
 
 export const LeatherMaterials = {

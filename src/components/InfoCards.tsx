@@ -44,7 +44,11 @@ const InfoCards = () => {
                     <p className="py-4">{infoCards[activeTab].body}</p>
                 </div>
                 <div className="basis-full">
-                    <img src={infoCards[activeTab].img} />
+                    <img
+                        src={infoCards[activeTab].img.src}
+                        width={infoCards[activeTab].img.width}
+                        height={infoCards[activeTab].img.height}
+                    />
                 </div>
             </div>
         </div>

@@ -21,14 +21,14 @@ import InfoCards from "@components/InfoCards";
             <div class="bg-black/25 w-full h-full z-10"></div>
             <div
                 class="hero-overlay bg-opacity-10 h-full bg-cover"
-                style={`background-image: url(${heroPicture});`}
+                style={`background-image: url(${heroPicture.src});`}
             >
                 <video
                     class="hidden lg:block object-cover w-full h-full"
                     autoplay
                     loop
                     muted
-                    poster={heroPicture}
+                    poster={heroPicture.src}
                 >
                     <source src={hero} type="video/mp4" />
                 </video>
@@ -47,27 +47,17 @@ import InfoCards from "@components/InfoCards";
     <section class="min-h-fit snap-start">
         <h2 class="text-center text-5xl font-bold p-4 my-4">Our Services</h2>
         <InfoCards client:load />
-        <!-- <div class="flex flex-col lg:flex-row gap-4 mb-10">
-            <Card
-                title="Technical Service"
-                body="Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit fuga impedit facere deserunt, rerum qui sit atque laudantium. Id officia laborum voluptate voluptatum libero, dolore quam inventore odio suscipit provident."
-            />
-            <Card
-                title="Fabric & Materials Sourcing"
-                body="Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit fuga impedit facere deserunt, rerum qui sit atque laudantium. Id officia laborum voluptate voluptatum libero, dolore quam inventore odio suscipit provident."
-            />
-            <Card
-                title="Manufacturing"
-                body="Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit fuga impedit facere deserunt, rerum qui sit atque laudantium. Id officia laborum voluptate voluptatum libero, dolore quam inventore odio suscipit provident."
-            />
-        </div> -->
     </section>
 
     <section class="min-h-fit">
         <h2 class="text-center text-5xl font-bold p-4 my-4">Our Story</h2>
         <div class="flex flex-col lg:flex-row gap-4 mb-10">
             <div class="basis-full">
-                <img src={shirt_shoes} />
+                <img
+                    src={shirt_shoes.src}
+                    width={shirt_shoes.width}
+                    height={shirt_shoes.height}
+                />
             </div>
             <div class="flex flex-col basis-full justify-center">
                 <p class="py-4">
@@ -96,10 +86,18 @@ import InfoCards from "@components/InfoCards";
         </h2>
         <div class="flex gap-10 justify-center items-center">
             <figure class="basis-full">
-                <img src={grandPrixOriginals} />
+                <img
+                    src={grandPrixOriginals.src}
+                    width={grandPrixOriginals.width}
+                    height={grandPrixOriginals.height}
+                />
             </figure>
             <figure class="basis-full">
-                <img src={gamesSportsWear} />
+                <img
+                    src={gamesSportsWear.src}
+                    width={grandPrixOriginals.width}
+                    height={grandPrixOriginals.height}
+                />
             </figure>
         </div>
     </section>
