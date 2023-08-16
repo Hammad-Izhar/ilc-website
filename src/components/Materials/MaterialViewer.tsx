@@ -17,7 +17,7 @@ const ItemCard = ({ itemName, subtype, imgURL }: ItemCardProps) => {
     return (
         <div>
             <a className="card card-compact w-48 h-48 shadow-xl relative overflow-hidden group">
-                <img src={imgURL} />
+                <img className="h-full w-full" src={imgURL} />
             </a>
             <p className="text-md capitalize">{subtype}</p>
             <p className="text-sm uppercase text-gray-400">{itemName}</p>
