@@ -4,15 +4,17 @@ import leatherRack from "@assets/leather-rack.jpg";
 
 const infoCards = {
     "Technical Service": {
-        body: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit fuga impedit facere deserunt, rerum qui sit atque laudantium. Id officia laborum voluptate voluptatum libero, dolore quam inventore odio suscipit provident.",
+        body: "At Mercury Exports, we understand that bringing your vision to life is a journey that requires the right guidance and expertise. Our dedicated team is here to seamlessly bridge the gap between your ideas and the tangible reality of exceptional leather and fabric goods. Whether you're starting with a concrete concept or just a spark of inspiration, we're your partners in crafting perfection.",
         img: leatherRack,
     },
     "Fabric & Materials Sourcing": {
-        body: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit fuga impedit facere deserunt, rerum qui sit atque laudantium. Id officia laborum voluptate voluptatum libero, dolore quam inventore odio suscipit provident.",
+        body: `At Mercury Exports, our commitment to crafting exceptional leather and fabric goods starts with sourcing the finest materials. We take pride in delivering products that embody a seamless fusion of quality, innovation, and sustainability. Our fabric and material sourcing section is a testament to our unwavering dedication to excellence.
+
+        What sets us apart is our commitment to controlling every aspect of production, right from the source. We are proud to operate our own tanneries where the raw materials are transformed into exquisite leather. This integrated approach not only ensures quality but also allows us to closely monitor every stage of processing and dyeing.`,
         img: leatherRack,
     },
     Manufacturing: {
-        body: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit fuga impedit facere deserunt, rerum qui sit atque laudantium. Id officia laborum voluptate voluptatum libero, dolore quam inventore odio suscipit provident.",
+        body: "Mercury Exports stands as your all-encompassing partner in apparel manufacturing, simplifying the journey from concept to creation. With an integrated approach that covers every aspect of the process, we bring your ideas to life with precision, innovation, and unwavering dedication. Our manufacturing section embodies the essence of our commitment to crafting excellence.",
         img: leatherRack,
     },
 };
@@ -39,9 +41,13 @@ const InfoCards = () => {
                     </div>
                 ))}
             </div>
-            <div className="flex flex-col lg:flex-row gap-4 mb-10">
+            <div className="flex flex-col lg:flex-row gap-20 mb-10">
                 <div className="flex flex-col basis-full justify-center">
-                    <p className="py-4">{infoCards[activeTab].body}</p>
+                    {infoCards[activeTab].body.split("\n").map((text) => (
+                        <p className="py-2" key={text}>
+                            {text}
+                        </p>
+                    ))}
                 </div>
                 <div className="basis-full">
                     <img
