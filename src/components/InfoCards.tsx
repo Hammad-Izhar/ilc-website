@@ -44,7 +44,7 @@ const InfoCards = () => {
             <div className="flex flex-col lg:flex-row gap-20 mb-10">
                 <div className="flex flex-col basis-full justify-center">
                     {infoCards[activeTab].body.split("\n").map((text) => (
-                        <p className="py-2" key={text}>
+                        <p className="py-2 text-lg" key={text}>
                             {text}
                         </p>
                     ))}
