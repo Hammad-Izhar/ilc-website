@@ -25,7 +25,7 @@ const InfoCards = () => {
 
     return (
         <div className="space-y-10">
-            <div className="flex justify-around">
+            <div className="flex flex-col md:flex-row justify-around">
                 {Object.keys(infoCards).map((heading, idx) => (
                     <div
                         key={idx}
