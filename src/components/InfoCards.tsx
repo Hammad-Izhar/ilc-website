@@ -4,17 +4,17 @@ import leatherRack from "@assets/leather-rack.jpg";
 
 const infoCards = {
     "Technical Service": {
-        body: "At Mercury Exports, we understand that bringing your vision to life is a journey that requires the right guidance and expertise. Our dedicated team is here to seamlessly bridge the gap between your ideas and the tangible reality of exceptional leather and fabric goods. Whether you're starting with a concrete concept or just a spark of inspiration, we're your partners in crafting perfection.",
+        body: "At Mercury, we understand that bringing your vision to life is a journey that requires the right guidance and expertise. Our dedicated team is here to seamlessly bridge the gap between your ideas and the tangible reality of exceptional leather and fabric goods. Whether you're starting with a concrete concept or just a spark of inspiration, we're your partners in crafting perfection.",
         img: leatherRack,
     },
     "Fabric & Materials Sourcing": {
-        body: `At Mercury Exports, our commitment to crafting exceptional leather and fabric goods starts with sourcing the finest materials. We take pride in delivering products that embody a seamless fusion of quality, innovation, and sustainability. Our fabric and material sourcing section is a testament to our unwavering dedication to excellence.
+        body: `At Mercury, our commitment to crafting exceptional leather and fabric goods starts with sourcing the finest materials. We take pride in delivering products that embody a seamless fusion of quality, innovation, and sustainability. Our fabric and material sourcing section is a testament to our unwavering dedication to excellence.
 
         What sets us apart is our commitment to controlling every aspect of production, right from the source. We are proud to operate our own tanneries where the raw materials are transformed into exquisite leather. This integrated approach not only ensures quality but also allows us to closely monitor every stage of processing and dyeing.`,
         img: leatherRack,
     },
     Manufacturing: {
-        body: "Mercury Exports stands as your all-encompassing partner in apparel manufacturing, simplifying the journey from concept to creation. With an integrated approach that covers every aspect of the process, we bring your ideas to life with precision, innovation, and unwavering dedication. Our manufacturing section embodies the essence of our commitment to crafting excellence.",
+        body: "Mercury stands as your all-encompassing partner in apparel manufacturing, simplifying the journey from concept to creation. With an integrated approach that covers every aspect of the process, we bring your ideas to life with precision, innovation, and unwavering dedication. Our manufacturing section embodies the essence of our commitment to crafting excellence.",
         img: leatherRack,
     },
 };
