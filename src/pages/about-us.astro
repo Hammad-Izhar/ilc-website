@@ -1,0 +1,37 @@
+---
+import Layout from "@layouts/Layout.astro";
+import Carousel from "@components/Carousel/Carousel";
+
+const carouselImages = (await Astro.glob("../assets/about-us/*.jpeg")).map(
+    (img) => img.default.src as string
+);
+
+console.log(carouselImages);
+---
+
+<Layout title="Mercury | About Us">
+    <h1 class="text-5xl font-bold text-center p-4">About Us</h1>
+
+    <p class="text-lg">
+        Welcome to Mercury - Your Premier Wholesale Supplier of Exquisite
+        Leather and Fabric Bags, Jackets, and Sleeves
+    </p>
+    <p class="text-lg py-2">
+        At Mercury, we take immense pride in our position as a leading wholesale
+        supplier in the realm of leather and fabric fashion. Our journey began
+        in 2001 with a vision to provide discerning customers with a diverse
+        range of high-quality garments and accessories that seamlessly blend
+        style, functionality, and innovation.
+    </p>
+    <p class="text-lg py-2">
+        Despite our resounding success, Mercury remains steadfastly committed to
+        our family-operated roots. While we've grown into a global wholesale
+        powerhouse, we have not lost sight of the values and principles that
+        have guided us from the very beginning. Our journey started as a labor
+        of love, driven by a shared passion for craftsmanship and an unwavering
+        dedication to delivering the finest leather and fabric products to our
+        customers.
+    </p>
+
+    <Carousel client:load images={carouselImages} />
+</Layout>
