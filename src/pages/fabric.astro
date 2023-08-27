@@ -1,8 +1,12 @@
 ---
+import * as path from "path";
 import Layout from "@layouts/Layout.astro";
 import { getCollection } from "astro:content";
 
-const leather_swatches = await getCollection("fabric_swatches");
+const fabric_swatches = await getCollection("fabric_swatches");
+const modules = (await Astro.glob("../assets/fabric_swatches/*")).map(
+    (img) => img.default.src
+);
 ---
 
 <Layout title="Mercury | Fabric">
@@ -10,12 +14,16 @@ const leather_swatches = await getCollection("fabric_swatches");
         class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-10 p-10"
     >
         {
-            leather_swatches.map((swatchData) => (
+            fabric_swatches.map((swatchData) => (
                 <div>
                     <div class="w-48 h-48 shadow-xl">
                         <img
                             class="w-full h-full"
-                            src={swatchData.data.image}
+                            src={modules.find((pathval) =>
+                                pathval.includes(
+                                    path.parse(swatchData.data.image).name
+                                )
+                            )}
                         />
                     </div>
                     <p class="text-md capitalize">{swatchData.data.color}</p>

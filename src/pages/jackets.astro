@@ -1,14 +1,26 @@
 ---
+import * as path from "path";
 import Layout from "@layouts/Layout.astro";
 import { getCollection } from "astro:content";
 
 const jackets = await getCollection("jackets");
+const modules = (await Astro.glob("../assets/fabric_swatches/*")).map(
+    (img) => img.default.src
+);
 ---
 
 <Layout title="Mercury | Jackets">
     <div
         class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-10 p-10"
     >
-        {jackets.map((jacketData) => <img src={jacketData.data.image} />)}
+        {
+            jackets.map((jacketData) => (
+                <img
+                    src={modules.find((pathval) =>
+                        pathval.includes(path.parse(jacketData.data.image).name)
+                    )}
+                />
+            ))
+        }
     </div>
 </Layout>

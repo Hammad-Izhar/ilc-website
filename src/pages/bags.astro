@@ -1,14 +1,26 @@
 ---
+import * as path from "path";
 import Layout from "@layouts/Layout.astro";
 import { getCollection } from "astro:content";
 
 const bags = await getCollection("bags");
+const modules = (await Astro.glob("../assets/bags/*")).map(
+    (img) => img.default.src
+);
 ---
 
 <Layout title="Mercury | Bags">
     <div
         class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-10 p-10"
     >
-        {bags.map((bagData) => <img src={bagData.data.image} />)}
+        {
+            bags.map((bagData) => (
+                <img
+                    src={modules.find((pathval) =>
+                        pathval.includes(path.parse(bagData.data.image).name)
+                    )}
+                />
+            ))
+        }
     </div>
 </Layout>
