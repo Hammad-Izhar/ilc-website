@@ -1,0 +1,29 @@
+---
+import Layout from "@layouts/Layout.astro";
+import { getCollection } from "astro:content";
+
+const leather_swatches = await getCollection("leather_swatches");
+---
+
+<Layout title="Mercury | Leather">
+    <div
+        class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-10 p-10"
+    >
+        {
+            leather_swatches.map((swatchData) => (
+                <div>
+                    <div class="w-48 h-48 shadow-xl">
+                        <img
+                            class="w-full h-full"
+                            src={swatchData.data.image}
+                        />
+                    </div>
+                    <p class="text-md capitalize">{swatchData.data.color}</p>
+                    <p class="text-sm uppercase text-gray-400">
+                        {swatchData.data.type}
+                    </p>
+                </div>
+            ))
+        }
+    </div>
+</Layout>

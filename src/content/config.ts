@@ -33,6 +33,7 @@ const jacketCollection = defineCollection({
         image: z.string(),
     }),
 });
+
 export const collections = {
     leatherSwatches: leatherSwatchCollection,
     fabricSwatches: fabricSwatchCollection,

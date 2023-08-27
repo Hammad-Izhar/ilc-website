@@ -4,6 +4,12 @@ import react from "@astrojs/react";
 import tailwind from "@astrojs/tailwind";
 import NetlifyCMS from "astro-netlify-cms";
 
+const swatchItemFields = [
+    { label: "Color", name: "color", widget: "string", required: true },
+    { label: "Type", name: "type", widget: "string", required: true },
+    { label: "Image", name: "image", widget: "image", required: true },
+];
+
 const websiteItemFields = [
     { label: "Name", name: "name", widget: "string", required: true },
     { label: "Image", name: "image", widget: "image", required: true },
@@ -27,20 +33,23 @@ export default defineConfig({
                         label: "Leather Swatches",
                         folder: "/src/content/leather_swatches",
                         media_folder: "/src/assets/leather_swatches/",
-                        fields: websiteItemFields,
+                        create: true,
+                        fields: swatchItemFields,
                     },
                     {
                         name: "fabric",
                         label: "Fabric Swatches",
                         folder: "/src/content/fabric_swatches",
                         media_folder: "/src/assets/fabric_swatches/",
-                        fields: websiteItemFields,
+                        create: true,
+                        fields: swatchItemFields,
                     },
                     {
                         name: "bags",
                         label: "Bags",
                         folder: "/src/content/bags",
                         media_folder: "/src/assets/bags/",
+                        create: true,
                         fields: websiteItemFields,
                     },
                     {
@@ -48,6 +57,7 @@ export default defineConfig({
                         label: "Jackets",
                         folder: "/src/content/jackets",
                         media_folder: "/src/assets/jackets/",
+                        create: true,
                         fields: websiteItemFields,
                     },
                 ],

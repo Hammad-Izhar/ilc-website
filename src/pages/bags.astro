@@ -1,0 +1,14 @@
+---
+import Layout from "@layouts/Layout.astro";
+import { getCollection } from "astro:content";
+
+const bags = await getCollection("bags");
+---
+
+<Layout title="Mercury | Bags">
+    <div
+        class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-10 p-10"
+    >
+        {bags.map((bagData) => <img src={bagData.data.image} />)}
+    </div>
+</Layout>
