@@ -3,6 +3,9 @@ import Layout from "@layouts/Layout.astro";
 import { getCollection } from "astro:content";
 
 const leather_swatches = await getCollection("leather_swatches");
+const modules = (await Astro.glob("../assets/leather_swatches/*")).map(
+    (img) => img.default.src
+);
 ---
 
 <Layout title="Mercury | Leather">
@@ -15,10 +18,9 @@ const leather_swatches = await getCollection("leather_swatches");
                     <div class="w-48 h-48 shadow-xl">
                         <img
                             class="w-full h-full"
-                            src={
-                                new URL(swatchData.data.image, import.meta.url)
-                                    .href
-                            }
+                            src={modules.find((path) =>
+                                path.includes(swatchData.data.image)
+                            )}
                         />
                     </div>
                     <p class="text-md capitalize">{swatchData.data.color}</p>
