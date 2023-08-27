@@ -4,7 +4,7 @@ import Layout from "@layouts/Layout.astro";
 import { getCollection } from "astro:content";
 
 const jackets = await getCollection("jackets");
-const modules = (await Astro.glob("../assets/fabric_swatches/*")).map(
+const modules = (await Astro.glob("../assets/jackets/*")).map(
     (img) => img.default.src
 );
 ---
