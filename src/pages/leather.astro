@@ -22,6 +22,9 @@ const modules = (await Astro.glob("../assets/leather_swatches/*")).map(
                                 path.includes(swatchData.data.image)
                             )}
                         />
+                        {modules.find((path) =>
+                            path.includes(swatchData.data.image)
+                        )}
                     </div>
                     <p class="text-md capitalize">{swatchData.data.color}</p>
                     <p class="text-sm uppercase text-gray-400">
