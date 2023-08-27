@@ -15,7 +15,10 @@ const leather_swatches = await getCollection("leather_swatches");
                     <div class="w-48 h-48 shadow-xl">
                         <img
                             class="w-full h-full"
-                            src={swatchData.data.image}
+                            src={
+                                new URL(swatchData.data.image, import.meta.url)
+                                    .href
+                            }
                         />
                     </div>
                     <p class="text-md capitalize">{swatchData.data.color}</p>
